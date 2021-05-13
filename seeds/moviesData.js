@@ -1,4 +1,4 @@
-const {movies } = require('../models');
+const {Movies } = require('../models');
 
 const moviedata = [
   {
@@ -51,6 +51,6 @@ const moviedata = [
   },
 ];
 
-const seedMovies = () => movies.bulkCreate(moviedata);
+const seedMovies = () => Movies.bulkCreate(moviedata);
 
 module.exports = seedMovies;

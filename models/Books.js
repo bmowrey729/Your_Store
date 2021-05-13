@@ -24,7 +24,7 @@ Books.init(
       allowNull: false,
     },
     synopsis: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },    
     length: {
