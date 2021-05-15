@@ -40,9 +40,7 @@ Books.init(
       },
     },
 
-    
-  
-  
+
   {
     sequelize,
     freezeTableName: true,
