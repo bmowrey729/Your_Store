@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class movies extends Model {}
+class Movies extends Model {}
 
-movies.init(
+Movies.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -15,36 +15,52 @@ movies.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    artist: {
+    release_year: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    exhibition_date: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
-    filename: {
+    staring: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    co_staring: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    books_id: {
+    director: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    rateing: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    category: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    length: {
       type: DataTypes.INTEGER,
-      references: {
-        model: 'books',
-        key: 'id',
-      },
+      allowNull: false,
     },
+    synopsis: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    }, 
+    price: {
+      type: DataTypes.DECIMAL(10, 2),
+      allowNull: true,
+      validate: {
+        isDecimal: true
+      },
+    },   
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'movies',
+    modelName: 'Movies',
   }
 );
 
-module.exports = movies;
+module.exports = Movies;
