@@ -1,23 +1,25 @@
 const router = require('express').Router();
 const { Gallery, Painting } = require('../models');
+const movies = require('../models/movies');
 
 // GET all galleries for homepage
+// changed galleries to books and painting into movies
 router.get('/', async (req, res) => {
   try {
-    const dbGalleryData = await Gallery.findAll({
+    const dbbooksData = await books.findAll({
       include: [
         {
-          model: Painting,
+          model: movies,
           attributes: ['filename', 'description'],
         },
       ],
     });
 
-    const galleries = dbGalleryData.map((gallery) =>
-      gallery.get({ plain: true })
+    const galleries = dbbooksData.map((books) =>
+      books.get({ plain: true })
     );
     res.render('homepage', {
-      galleries,
+      books,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -27,12 +29,12 @@ router.get('/', async (req, res) => {
 });
 
 // GET one gallery
-router.get('/gallery/:id', async (req, res) => {
+router.get('/books/:id', async (req, res) => {
   try {
-    const dbGalleryData = await Gallery.findByPk(req.params.id, {
+    const dbbooksData = await books.findByPk(req.params.id, {
       include: [
         {
-          model: Painting,
+          model: movies,
           attributes: [
             'id',
             'title',
@@ -45,21 +47,21 @@ router.get('/gallery/:id', async (req, res) => {
       ],
     });
 
-    const gallery = dbGalleryData.get({ plain: true });
-    res.render('gallery', { gallery, loggedIn: req.session.loggedIn });
+    const gallery = dbbooksData.get({ plain: true });
+    res.render('gallery', { books, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
 
-// GET one painting
-router.get('/painting/:id', async (req, res) => {
+// GET one painting is now movies 
+router.get('/movies/:id', async (req, res) => {
   try {
-    const dbPaintingData = await Painting.findByPk(req.params.id);
+    const dbmoviesData = await movies.findByPk(req.params.id);
 
-    const painting = dbPaintingData.get({ plain: true });
-    res.render('painting', { painting, loggedIn: req.session.loggedIn });
+    const movies = dbmoviesData.get({ plain: true });
+    res.render('movies', { movies, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
