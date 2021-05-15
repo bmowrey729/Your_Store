@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Painting extends Model {}
+class Movies extends Model {}
 
-Painting.init(
+Movies.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -15,41 +15,52 @@ Painting.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    artist: {
+    release_year: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    exhibition_date: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
-    filename: {
+    staring: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    co_staring: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    gallery_id: {
+    director: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    rateing: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    category: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    length: {
       type: DataTypes.INTEGER,
-      references: {
-        model: 'gallery',
-        key: 'id',
-      },
+      allowNull: false,
     },
-<<<<<<< Updated upstream:models/Painting.js
+    synopsis: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    }, 
+    price: {
+      type: DataTypes.DECIMAL(10, 2),
+      allowNull: true,
+      validate: {
+        isDecimal: true
+      },
+    },   
   },
-=======
-
-
->>>>>>> Stashed changes:models/Books.js
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'painting',
+    modelName: 'Movies',
   }
 );
 
-module.exports = Painting;
+module.exports = Movies;
