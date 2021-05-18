@@ -1,5 +1,6 @@
 const User = require('./User');
 const Books = require('./Books');
+const Music = require('./Music');
 const Movies = require('./Movies');
 
 // Gallery.hasMany(Painting, {
@@ -10,4 +11,4 @@ const Movies = require('./Movies');
 //   foreignKey: 'gallery_id',
 // });
 
-module.exports = { User, Books, Movies };
+module.exports = { User, Books, Movies , Music,};
