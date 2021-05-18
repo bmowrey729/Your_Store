@@ -1,5 +1,7 @@
 <section class="container">
-  <h3 class="movie-name">{{movie.name}}</h3>
+  <h3 class="movie-name">{{movie.title}}</h3>
+  <h4>Director: {{director}}</h4>
+  <h4>Genre: {{category}}</h4>
   <!--<h4>Opening Hour: {{format_time gallery.starting_date}}</h4>
   <h4>Closing Hour: {{format_time gallery.ending_date}}</h4>-->
   {{#if loggedIn}}
@@ -7,8 +9,13 @@
     <!--{{#each gallery.paintings as |painting|}}
     {{> painting-details}}
     {{/each}}-->
-    {{}}
-    
+
+    <h5>Title:{{title}}</h5>
+    <!--image-->
+    <p>Director:{{director}}</p>
+    <p>Legnth:{{length}}</p>
+    <p>What is it about?{{synopsis}}</p><!--add category?-->
+    <p>Price:{{price}}</p>
   </section>
 </section>
 {{else}}
