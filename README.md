@@ -1,5 +1,5 @@
 # Your_Store
-tried of all the differnt streaming services??
+over  all the differnt streaming services??
 feels like one day a movie is on Hulu the next on prime for a cost?? 
 
 Or do you just miss when you could just got ot a music, book, or movie rental store?? your_store has you covered. 
