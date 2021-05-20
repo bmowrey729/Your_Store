@@ -72,9 +72,16 @@ const musicdata = [
     release_date: '01-30-1991',
     length: '343',
     price: 1.50,
+<<<<<<< HEAD
   }, 
   
 ];  
+=======
+  },
+  
+  
+];
+>>>>>>> main
 
 const seedMusic = () => Music.bulkCreate(musicdata);
 
