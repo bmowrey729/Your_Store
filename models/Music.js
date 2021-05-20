@@ -14,11 +14,7 @@ Music.init(
     song_title: {
       type: DataTypes.STRING,
       allowNull: false,
-<<<<<<< HEAD
-    },    
-=======
     },
->>>>>>> main
     album_title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -31,11 +27,7 @@ Music.init(
       type: DataTypes.DATE,
       allowNull: false,
     },
-<<<<<<< HEAD
-       
-=======
       
->>>>>>> main
     length: {
       type: DataTypes.INTEGER,
       allowNull: false
@@ -47,12 +39,7 @@ Music.init(
           isDecimal: true
         },
       },
-<<<<<<< HEAD
-    },  
-  
-=======
     },   
->>>>>>> main
   
   {
     sequelize,
