@@ -15,16 +15,13 @@
   </header>
   <nav>
     <a href="/">Home</a>
-    {{#if loggedIn}}
+    {{#if logged In here}}
     <button id="logout" class="btn-no-style">Logout</button>
     {{else}}
     <a href="/login">Login</a>
     {{/if}}
   </nav>
   <main>
-    <aside>
-      <h2>Here is what we have for you</h2>
-    </aside>
     <div class="gallery">
       {{{body}}}
     </div>
