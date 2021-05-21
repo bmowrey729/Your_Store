@@ -1,10 +1,10 @@
 {{#if loggedIn}}
 <section class="books">
-  <img src="/images/{{painting.filename}}" alt="{{painting.description}}"><!--images for the books-->
+  <img src="/images/CommandandControl.jpg" alt="{{book.synopsis}}"><!--images for the books-->
   <div class="books-details">
-    <h3>{{books.title}}</h3>
-    <p>By: {{title.author}}</p>
-    <p>Realease Date: {{release_date}} <!--{{ format_date painting.exhibition_date}}--></p>
+    <h3>{{book.title}}</h3>
+    <p>By: {{book.author}}</p>
+    <p>Realease Date: {{book.release_date}}</p>
   </div>
 </section>
 {{else}}
