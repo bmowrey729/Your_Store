@@ -1,15 +1,16 @@
 <section class="container">
   <h3 class="movie-name">{{movie.title}}</h3>
-  <h4>Director: {{director}}</h4>
-  <h4>Genre: {{category}}</h4>
+  <h4>Director: {{movie.director}}</h4>
+  <h4>Genre: {{movie.category}}</h4>
   {{#if loggedIn}}
   <section class="flex-row justify-center">
     <h5>Title:{{movie.title}}</h5>
-    <img src="/images/TopGun.jpg" alt="{{movie.synosis}}"><!--image-->
-    <p>Director:{{director}}</p>
-    <p>Staring{{staring}}</p>
-    <p>Legnth:{{length}}</p>
-    <p>Price:{{price}}</p>
+    <img src="/images/{{getImageFileName movie.title}}.jpg" />
+    <p>{{movie.synopsis}}</p>
+    <p>Director:{{movie.director}}</p>
+    <p>Starring{{movie.staring}}</p>
+    <p>Length:{{movie.length}}</p>
+    <p>Price:{{movie.price}}</p>
   </section>
 </section>
 {{else}}
