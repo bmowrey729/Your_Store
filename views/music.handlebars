@@ -1,0 +1,24 @@
+<!--{#if loggedIn}}
+<section class="music">
+    imageimage
+    play small demo
+    <h3>Song title:{{title}}</h3>
+    <h4>Artist:{{artist}}</h4>
+    <h4>Genre:{{category}}</h4>
+    <p>Released:{{release_date}}</p>
+    double-check info
+</section>
+{{/if}}-->
+
+{{#if loggedIn}}
+<section class="music">
+  <img src="/images/Unplugged.jpg" alt="{{music.album_title}}"><!--images for the books-->
+  <div class="music-details">
+    <h3>Song{{musics.song_title}}</h3>
+    <p>By: {{music.band_title}}</p>
+    <p>Released: {{music.release_date}}</p>
+  </div>
+</section>
+{{else}}
+<a href="/login">Login to check what we have for more</a>
+{{/if}}
