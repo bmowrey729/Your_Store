@@ -1,12 +1,13 @@
 {{#if loggedIn}}
-<section class="books">
-  <img src="/images/CommandandControl.jpg" alt="{{book.synopsis}}"><!--images for the books-->
-  <div class="books-details">
-    <h3>{{book.title}}</h3>
-    <p>By: {{book.author}}</p>
-    <p>Realease Date: {{book.release_date}}</p>
-  </div>
-</section>
+  <section class="books">
+    <img src="/images/CommandandControl.jpg" alt="{{book.synopsis}}" />
+    <!--images for the books-->
+    <div class="books-details">
+      <h3>{{book.title}}</h3>
+      <p>By: {{book.author}}</p>
+      <p>Realease Date: {{book.release_date}}</p>
+    </div>
+  </section>
 {{else}}
-<a href="/login">Login to check what we have for more</a>
+  <a href="/login">Login to check what we have for more</a>
 {{/if}}

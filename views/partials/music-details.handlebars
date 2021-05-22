@@ -3,7 +3,11 @@
     <header>{{song_title}}</header>
 
     <div class="card-body">
-      <img src="/images/{{music}}" <!--alt="{{song_title}}">-->
+      <img
+        src="/images/{{getImageFileName album_title}}.jpg"
+        alt="{{song_title}}"
+        style="max-width:200px;"
+      />
       <p>By: {{band_title}}</p>
     </div>
   </a>
