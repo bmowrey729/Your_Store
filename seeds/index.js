@@ -1,8 +1,7 @@
 const sequelize = require('../config/connection');
 const seedMovies = require('./moviesData');
 const seedBooks = require('./booksData');
-const seedMusic = require('./musicData');
-
+const seedMusic = require('./musicdata');
 const seedAll = async () => {
   await sequelize.sync({ force: true });
 
@@ -11,6 +10,8 @@ const seedAll = async () => {
   await seedBooks();
   await seedMusic();
 
+
+  await seedMusic();
 
   process.exit(0);
 };
