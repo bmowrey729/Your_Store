@@ -36,3 +36,45 @@
   font-size: 20px;
   font-weight: bolder;
 }
+
+.btn{
+    cursor: pointer;
+    color:deeppink;
+    font-size: medium;
+    letter-spacing: 2px;
+    padding: 10px 30px;
+    border: solid #003333;
+    background: transparent;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bolder;
+    margin: 40px; 8px;
+  
+}
+
+.btn a:visted{
+  background-color: #fff;
+  color: #cc0052
+
+}
+.btn:hover{
+  color: #000;
+  background-color: #fff
+  color: #cc0052
+}
+
+.btn a:link{
+  color: #000
+  background-color: #fff;
+  text-decoration: none text-decoration
+}
+
+.content{
+  text-align; center; 
+  margin-top: 12%;
+}
+
+.content h1{
+  font-size:medium;
+  color:whitesmoke;  
+}
