@@ -369,6 +369,7 @@ h5,
 h6 {
   margin: 0 0 0.5rem;
   line-height: 1.25;
+  justify-content: center;
 }
 
 h1 {
@@ -381,6 +382,7 @@ h2 {
 
 h3 {
   font-size: 1.75rem;
+  justify-content: center;
 }
 
 h4 {

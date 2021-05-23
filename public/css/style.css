@@ -1,17 +1,24 @@
 .container {
   width: 100%;
   height: 100vh;
-  background-image: url("/images/books-movies-music (1).jpg"); 
-  background-size: cover;
+  /*background-image: url("/images/books-movies-music (1).jpg"); */
+  /*background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;*/
   padding-left: 8%;
   padding-right: 8%;
   box-sizing: border-box;
 }
+body{
+  background-image: url("/images/books-movies-music.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  max-width: 100%;
+}
+
 h1{
-  background-color: royalblue;
-  
+  background-color: royalblue; 
 }
 
 .header {
@@ -21,12 +28,34 @@ h1{
   overflow: hidden;
   position: relative;
   background-color: rgb(rgb(0, 162, 255), rgb(0, 87, 128), rgba(0, 0, 255, 0.561));
+
 }
+
 
 .navbar {
   text-align: center;
   flex: 1;
+  
 }
+
+nav{
+ /* position: relative;
+  left: 25%;*/
+  justify-content: space-around;
+  background-color: royalblue;
+}
+
+a{
+  list-style: none;
+  text-decoration: black;
+  color: #000;
+  padding-left: 1rem;
+
+}
+a:hover{
+  color: bisque;
+}
+
 
 
 .navbar a {
@@ -82,6 +111,10 @@ h1{
 h1{
   text-align: center;
 }
+
+h3{
+  justify-content: center;
+}
 nav{
   text-align: center;
 }
@@ -90,6 +123,41 @@ a{
   justify-content: space-between;
 }
 
+footer{
+  justify-content: center;
+  background-color: royalblue;
+  position: absolute;
+  left: 35%;
+  top: 100%;
+  }
+
+  p{
+    justify-content: center;
+    padding: 10px 50px;
+  }
+.login-footer{
+  padding-left: 5px;
+  margin: 0;
+  text-decoration: none;
+}
+.login-card{
+  position: relative;
+  left: 4.7rem;
+  top: 8.7rem;
+}
+.login-title{
+  position: relative;
+  left: 6rem;
+}
+.signup-card{
+  position: relative;
+  right: 5.5rem ;
+  top: 6rem;
+}
+.signup-title{
+  position: relative;
+  left: 4.5rem;
+}
 
 
 
