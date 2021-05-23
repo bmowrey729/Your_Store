@@ -7,4 +7,7 @@ module.exports = {
       new Date(date).getFullYear() + 5
     }`;
   },
+  getImageFileName: (title) => {
+    return title.replace(" ", "");
+  },
 };

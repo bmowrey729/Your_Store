@@ -1,24 +1,30 @@
-const router = require('express').Router();
-const { Books, Movies } = require('../models');
+const router = require("express").Router();
+const { Books, Movies, Music } = require("../models");
 
 // GET all galleries for homepage
 // changed galleries to books and painting into movies
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
   try {
-    const dbbooksData = await Books.findAll({
-      // include: [
-      //   {
-      //     model: Movies,
-      //     attributes: ['filename', 'description'],
-      //   },
-      // ],
-    });
+    let books;
+    let movies;
+    let music;
+    if (req.session.loggedIn) {
+      const dbbooksData = await Books.findAll({});
+      books = dbbooksData.map((book) => book.get({ plain: true }));
 
-    const books = dbbooksData.map((book) =>
-      book.get({ plain: true })
-    );
-    res.render('homepage', {
-      books,
+      const dbMoviesData = await Movies.findAll({});
+      movies = dbMoviesData.map((movie) => movie.get({ plain: true }));
+
+      const dbMusicData = await Music.findAll({});
+      music = dbMusicData.map((musicItem) => musicItem.get({ plain: true }));
+    }
+
+    res.render("homepage", {
+      items: {
+        books,
+        movies,
+        music,
+      },
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -28,39 +34,25 @@ router.get('/', async (req, res) => {
 });
 
 // GET one gallery
-router.get('/books/:id', async (req, res) => {
+router.get("/books/:id", async (req, res) => {
   try {
-    const dbbooksData = await Books.findByPk(req.params.id, {
-      // include: [
-      //   {
-      //     model: movies,
-      //     attributes: [
-      //       'id',
-      //       'title',
-      //       'artist',
-      //       'exhibition_date',
-      //       'filename',
-      //       'description',
-      //     ],
-      //   },
-      // ],
-    });
-
+    const dbbooksData = await Books.findByPk(req.params.id, {});
     const book = dbbooksData.get({ plain: true });
-    res.render('books', { book, loggedIn: req.session.loggedIn });
+    res.render("books", { book, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
 
-// GET one painting is now movies 
-router.get('/movies/:id', async (req, res) => {
+// GET one painting is now movies
+router.get("/movies/:id", async (req, res) => {
   try {
     const dbmoviesData = await Movies.findByPk(req.params.id);
-
-    const movies = dbmoviesData.get({ plain: true });
-    res.render('movies', { movies, loggedIn: req.session.loggedIn });
+    console.log(dbmoviesData);
+    const movie = dbmoviesData.get({ plain: true });
+    console.log("MOVIE:", movie);
+    res.render("movies", { movie, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -68,12 +60,12 @@ router.get('/movies/:id', async (req, res) => {
 });
 
 // Login route
-router.get('/login', (req, res) => {
+router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect("/");
     return;
   }
-  res.render('login');
+  res.render("login");
 });
 
 module.exports = router;
