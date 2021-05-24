@@ -1,20 +1,19 @@
 {{#if loggedIn}}
-    <h2>Movies</h2>
-    {{#each items.movies as |movie|}}
-    {{> movies-details}}
-    {{/each}}
+<h2>Movies</h2>
+{{#each items.movies as |movie|}}
+{{> movies-details}}
+{{/each}}
 
-    <h2>Books</h2>
-    {{#each items.books as |book|}}
-    {{> books-details}}
-    {{/each}}
+<h2>Books</h2>
+{{#each items.books as |book|}}
+{{> books-details}}
+{{/each}}
 
-    <h2>Music</h2>
-    {{#each items.music as |music|}}
-    {{> music-details}}
-    {{/each}}
+<h2>Music</h2>
+{{#each items.music as |music|}}
+{{> music-details}}
+{{/each}}
 {{else}}
-    Please log in!
+<!--<footer>Please log in to see more awesome stuff</footer>-->
+
 {{/if}}
-
-

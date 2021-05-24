@@ -1,42 +1,49 @@
 <html lang="en">
 
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Store</title>
-    <link rel="stylesheet" type="text/css" href="/css/jass.css" />
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Store</title>
+  <link rel="stylesheet" type="text/css" href="/css/jass.css" />
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
 
-  <body>
-    <header>
-      <h1>Welcome to Your_Store</h1>
-    </header>
+<body>
+  <header>
+    <h1>Welcome to Your_Store</h1>
+  </header>
+  <div class="navbar">
     <nav>
       <a href="/">Home</a>
       {{#if loggedIn}}
-        <button id="logout" class="btn-no-style">Logout</button>
+      <button id="logout" class="btn-no-style">Logout</button>
       {{else}}
-        <a href="/login">Login</a>
+      <a href="/login">Login</a>
       {{/if}}
       <a href="/books">Books</a>
       <a href="/movies">Movies</a>
       <a href="/music">Music</a>
     </nav>
-    <main>
-      <!--<aside>
+  </div>
+  <main>
+    <!--<aside>
       <h2>Here is what we have for you</h2>
     </aside> -->
-      <div class="gallery">
+    <div class="gallery">
 
-        <img src="/images/books-movies-music.jpg" class="img-fluid col-md-2" />
+      <!--<img src="/images/books-movies-music.jpg" class="img-fluid col-md-2" />-->
 
-        {{{body}}}
-      </div>
-    </main>
-    {{#if loggedIn}}
-      <script src="/js/logout.js"></script>
-    {{/if}}
-  </body>
+      {{{body}}}
+    </div>
+  </main>
+  <footer>
+    <div class="footer">
+      <p>Please<a href="/login" class="login-footer">login</a> in to see more awesome stuff</p>
+    </div>
+  </footer>
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
 
 </html>
